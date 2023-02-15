@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: arc-k8s-demo
+  namespace: default
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: arc-k8s-demo
@@ -40,6 +41,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: arc-k8s-demo
+  namespace: default
   labels:
     name: arc-k8s-demo
 spec:
